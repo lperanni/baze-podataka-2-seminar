@@ -1,0 +1,29 @@
+{
+  "name": "baze-podataka-2-seminar",
+  "version": "1.0.0",
+  "description": "University Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lperanni/baze-podataka-2-seminar.git"
+  },
+  "author": "Luciano Peranni, Andrea Ardizzone",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lperanni/baze-podataka-2-seminar/issues"
+  },
+  "homepage": "https://github.com/lperanni/baze-podataka-2-seminar#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "knex": "^0.21.1",
+    "sqlite3": "^4.2.0",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0"
+  }
+}
