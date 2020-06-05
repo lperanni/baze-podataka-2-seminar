@@ -91,6 +91,28 @@ const decomposeToThirdNF = (R, K, Fmin) => {
   })
   console.log("Result is: " + result);
   executionLog += "Result is: " + String(result)+ "\n\n\n";
+  
+  flatten(K).forEach(key => {
+    flatten(Fmin).forEach(dep => {
+      let inRo = true; 
+      dep = mergeUnique(dep);
+      for(let i = 0; i < key.length; i++){
+        if(!dep.includes(key.charAt(i))){
+          inRo = false;
+          break;
+        }
+      }
+      if (inRo){
+        executionLog += `Key ${key} included`;
+        console.log("Key included");
+        return result;
+      }
+
+    })
+    
+  })
+  executionLog += `No key found. Adding key: ${flatten(K)[0]}`;
+  result.push(flatten(K)[0]);
   return result;
 }
 

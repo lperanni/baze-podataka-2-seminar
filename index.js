@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const router = require('./router');
-const logger = require('./shared/logger');
 require('dotenv').config();
 app.use(express.urlencoded());
 
