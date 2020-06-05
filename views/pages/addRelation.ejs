@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<%- include('../components/head') -%>
+
+<body>
+  <%- include('../components/header') -%>
+  <main class="container">
+    <form action="/add" method="POST" class="addForm">
+      <label for="rel">Relation<input type="text" name="rel"></label>
+      <label for="keys">Keys
+        <input type="text" name="keys">
+      </label>
+      <label for="fmin">Fmin<input type="text" name="fmin"></label>
+      <button class="submit-relation" onclick="saveRelation">Submit</button>
+    </form>
+    
+  </main>
+  <%- include('../components/footer') -%>
+</body>
+    
+</html>
+

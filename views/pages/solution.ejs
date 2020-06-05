@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<%- include('../components/head') -%>
+
+<body>
+  <%- include('../components/header') -%>
+  <main class="container">
+    <h1>Solution for <%= R %></h1>
+    <% for (var i in solution ) { %>
+      <p class="card"><%=solution[i]%></p>
+    <% } %>
+    <textarea><%= log %></textarea>
+  </main>
+  <%- include('../components/footer') -%>
+</body>
+
+</html>

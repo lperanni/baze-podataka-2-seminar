@@ -1,9 +1,7 @@
 const { Router } = require("express");
 const router = Router();
+const gui = require("./controllers/interface.controller");
 
 
-router.get("/", (req, res) => {
-  res.send("Boy");
-})
-
+router.use('/', gui);
 module.exports = router;

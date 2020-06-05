@@ -1,0 +1,116 @@
+/*================ALL====================*/
+
+* {
+ font-family: 'Raleway', sans-serif;
+}
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.key{
+  display: inline;
+}
+
+nav{
+  position: fixed;
+  width: 100vw;
+  z-index: 99;
+}
+textarea{
+  height: 250px;
+  background-color: black;
+  color: green;
+  font-size: 130%;
+}
+
+h1{
+  text-align: center;
+}
+.add-btn a {
+  color: white;
+}
+a:focus{
+  text-decoration: none;
+  color: black;
+}
+a:hover{
+  cursor: pointer;
+}
+
+/*===============HEADER==================*/
+
+.logo-icon {
+  color: green;
+  border-radius: 295px;
+  padding-left: 15px;
+}
+.nav-list {
+  padding-right: 15px;
+}
+
+header{
+  margin-bottom: 150px;
+}
+
+/*===============Index===================*/
+
+.welcome-text {
+  margin-right: 20px;
+}
+main {
+  flex: 1 0 auto;
+}
+.card {
+  padding: 10px;
+}
+.features{
+  display: flex;
+  justify-content: space-around;
+}
+.card-title i{
+  vertical-align: middle;
+  margin-left: 10px;
+}
+
+.add-btn{
+  border: none;
+  border-radius: 30px;
+  padding: 5px 20px;
+  background-color: red;
+  color: white;
+  font-size: 45px;
+  position: fixed;
+  top: 15%;
+  left: 5%;
+}
+
+.addForm{
+ margin-top: 10%;
+ border: 1px solid black;
+ box-shadow: 1px 2px 2px grey;
+ padding: 20px;
+}
+
+.submit-relation {
+  padding: 20px 40px;
+  border: none;
+  background-color: green;
+  color: white;
+  width: 100%;
+  font-size: 150%;
+  margin-top: 50px;
+}
+
+.solve-btn{
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: green;
+  color: white;
+  font-size: 150%;
+}
+.solve-btn:hover{
+  cursor: pointer;
+}

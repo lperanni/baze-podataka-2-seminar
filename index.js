@@ -3,9 +3,14 @@ const app = express();
 const router = require('./router');
 const logger = require('./shared/logger');
 require('dotenv').config();
+app.use(express.urlencoded());
 
 app.use("/", router);
+app.set("view engine", "ejs");
+// Handle non-existing routes.
+app.use(express.static('public'));
+app.use((req, res) => res.render('pages/NotFound'));
 
 app.listen(process.env.PORT, () => {
-  logger.info(`Server running on port ${process.env.PORT}`);
-})
+  console.log(`Listening on port ${process.env.PORT}`);
+})  

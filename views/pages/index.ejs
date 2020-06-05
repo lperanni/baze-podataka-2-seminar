@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<%- include('../components/head') -%>
+
+<body>
+  <%- include('../components/header') -%>
+  <main class="container">
+    <button class="add-btn"><a href="add">+</button>
+    <% for (var i in relations ) { %>
+    <div class="card">
+      <form action="/delete" method="POST">
+        <input type="hidden" name="relation_id" value="<%= relations[i].relation_id %>">
+        <button type="submit">Delete</button>
+      </form>
+      <form action="/solve" method="POST">
+        <a href="#">
+          <h1><%= relations[i].R %></h1>
+        </a>
+        <input type="hidden" value="<%= relations[i].relation_id %>" name="relation_id">
+        <input type="hidden" value="<%= relations[i].R %>" name="relation">
+        <div class="features">
+          <div class="group">
+            <h3>Keys</h3>
+            <p class="key" name="K">
+              <% for (var j in relations[i].K ) { %>
+              <%=relations[i].K[j].K %>,
+              <% } %>
+            </p>
+          </div>
+          <div class="group">
+            <h3>Fmin</h3>
+            <p class="key">
+              <% for (var j in relations[i].Fmin ) { %>
+              <%=relations[i].Fmin[j].dependency %>,
+              <% } %>
+            </p>
+          </div>
+        </div>
+
+        <button type="submit" class="solve-btn">Solve</button>
+      </form>
+    </div>
+    <% } %>
+  </main>
+  <%- include('../components/footer') -%>
+</body>
+
+</html>
