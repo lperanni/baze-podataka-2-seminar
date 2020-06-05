@@ -1,35 +1,5 @@
 let executionLog = "";
 
-const decomposeToThirdNF = (R, K, Fmin) => {
-  const result = [];
-  flatten(Fmin).forEach(item => {
-    const original = item;
-    item = mergeUnique(item);
-    let valid = false;
-    result.every(Ri => {
-      valid = true;
-      for (let i = 0; i < item.length; i++) {
-        if (!Ri.includes(item.charAt(i))) {
-          valid = false;
-        }
-        if (valid) {
-          console.log(original + " is element of Ri");
-          executionLog += String(original) + " is element of Ri\n";
-          return false;
-        }
-      }
-    })
-    if (!valid && item.length > 1) {
-      console.log(original + " not present. Adding to ro");
-      executionLog += String(original) + " not present. Adding to ro\n\n";
-      result.push(item);
-    }
-  })
-  console.log("Result is: " + result);
-  executionLog += "Result is: " + String(result)+ "\n\n\n";
-  return result;
-}
-
 const checkIfInThirdNF = (R, keys, Fmin) => {
 
   let valid = true;
@@ -84,8 +54,44 @@ const checkIfInThirdNF = (R, keys, Fmin) => {
 
 
     console.log("Third rule has been confirmed for: " + element);
-    return false;
+    return true;
   });
+  return valid;
+}
+
+const decomposeToThirdNF = (R, K, Fmin) => {
+  const result = [];
+  if(checkIfInThirdNF(R, K, Fmin)){
+    executionLog += "Already in 3rd normal form";
+    return result;
+  };
+  flatten(Fmin).forEach(item => {
+    const original = item;
+    item = mergeUnique(item);
+    let valid = false;
+    result.every(Ri => {
+      valid = true;
+      console.log("RI: " + Ri);
+      for (let i = 0; i < item.length; i++) {
+        if (!Ri.includes(item.charAt(i))) {
+          valid = false;
+        }
+      }
+      if (valid) {
+        console.log(original + " is element of Ri");
+        executionLog += String(original) + " is element of Ri\n";
+        return false;
+      }
+    })
+    if (!valid && item.length > 1) {
+      console.log(original + " not present. Adding to Ro");
+      executionLog += String(original) + " not present. Adding to Ro\n\n";
+      result.push(item);
+    }
+  })
+  console.log("Result is: " + result);
+  executionLog += "Result is: " + String(result)+ "\n\n\n";
+  return result;
 }
 
 const flatten = (objectArray) => {
